@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block content %}
+
+    <h4>You are a {{ group }} with {{ player.income3 }} tokens.</h4>
+    <p>Now you will decide on the tax and transfer scheme for your decision group.</p>
+    <p>In this round, you are matched with the following participants:</p>
+    <p> { {{ member1_group }} } with { {{ member1_tokens }} } tokens</p>
+    <p> { {{ member2_group }} } with { {{ member2_tokens }} } tokens</p>
+    <p> { {{ member3_group }} } with { {{ member3_tokens }} } tokens</p>
+    <p>
+        You have / The {{ 400token_group }} with 400 tokens has {{ competition_msg }}.
+    </p>
+    {% formfield player.dv with label="Which tax and transfer scheme do you prefer?" %}
+    {% next_button %}
+
+{% endblock %}

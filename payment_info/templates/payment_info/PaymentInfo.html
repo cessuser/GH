@@ -1,0 +1,55 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Thank you
+{% endblock %}
+
+{% block content %}
+    <p>
+        In Part 1 of the experiment, the correct answers to the two painting questions were:
+    </p>
+        <table class="table">
+        <tr>
+           <th>Paint#11 klee</th>
+           <th>Paint#12 boch</th>
+        </tr>
+        <tr>
+            <td><img src= "{% static "payment_info/klee.jpg" %}" height="400"></td>
+            <td><img src="{% static "payment_info/boch.jpg" %}" height="400"></td>
+        </tr>
+    </table>
+    <p>
+        Your payoff from Part 1 is {{ p1_payoff }} tokens.
+    </p>
+    <p>
+        <table class="table">
+        <tr>
+            In Part 2, the following rounds were randomly selected by the computer:
+            <tr>Rounds {{ rd1a }} and {{ rd1b }} of Period 1</tr>
+            <tr>Rounds {{ rd2a }} and {{ rd2b }} of Period 2</tr>
+            <tr>Rounds {{ rd3a }} and {{ rd3b }} of Period 2</tr>
+        </tr>
+
+        <tr>Your payoff from Part 2 is {{ p2_payoff }} tokens.</tr>
+        </table>
+    </p>
+    <p>
+        In Part 3, the computer randomly selected one participant in the lab to receive {{ p3_bonus }} tokens.
+        You were {{ chosen }} selected.
+    </p>
+    <p>
+        You earned {{ p3_payoff1 }} tokens in the Numbers Task and you received 200 tokens for completing the survey.
+    </p>
+    <p>
+        Your payoff from Part 3 is {{ p3_payoff }} tokens.
+    </p>
+    <p> Your total payoff is {{ total_payoff }} tokens.</p>
+    <p>The exchange rate is £1 = 400 tokens.</p>
+    <p>The show-up fee is £5.</p>>
+    <p>Your earnings from the experiment are thus £ {{ real_pay }}.</p>
+   {% next_button %}
+
+
+{% endblock %}
+

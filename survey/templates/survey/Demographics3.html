@@ -1,0 +1,51 @@
+{% extends "global/Base.html" %}
+{% load otree static %}
+
+{% block title %}
+    Survey
+{% endblock %}
+
+{% block content %}
+    {% formfield player.q14 %}
+    {% formfield player.q15 %}
+    {% formfield player.q16 %}
+    {% formfield player.q17 %}
+    {% formfield player.q18 %}
+    {{ form.q19.label }}
+<div id="1"> {{ form.q19.0}} </div>
+<div id="2"> {{ form.q19.1}} </div>
+<div id="3"> {{ form.q19.2}} </div>
+<div id="4"> {{ form.q19.3}} </div>
+<div class="other_field" id="other_field" >{{ form.other}}</div>
+<button class="otree-btn-next btn btn-primary next-button otree-next-button" id="next" disabled>Next</button>
+
+
+<script>
+   $(document).ready(function(){
+   $('#other_field').hide()
+   $("#other_field").keyup(function() {
+            $('#next').removeAttr('disabled');
+   });
+
+    // On Select option changed
+    $("#4").change(function(){
+        $('#next').attr('disabled','disabled');
+        $("#other_field").show();   //This changes display to block
+    });
+    $("#1").click(function(){
+        $('#other_field').hide()
+        $('#next').removeAttr('disabled');
+    });
+    $("#2").click(function(){
+        $('#other_field').hide()
+        $('#next').removeAttr('disabled');
+    });
+    $("#3").click(function(){
+        $('#other_field').hide()
+        $('#next').removeAttr('disabled');
+    });
+   });
+
+</script>
+
+{% endblock %}

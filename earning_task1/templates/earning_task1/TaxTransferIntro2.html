@@ -1,0 +1,72 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+
+
+{% block content %}
+    <p>
+        After the outcome of the competition is revealed, you and the other participants will be asked to choose between
+        two tax and transfer schemes for the decision group. This section explains how the schemes work and how the tax
+        and transfer scheme will be chosen for each decision group.
+
+
+    </p>
+    <p>
+       Under the tax and transfer schemes, each participant will pay taxes over their earnings and each participant will
+        receive a number of tokens as a transfer. In one scheme, everyone pays 20% of taxes over their earnings and
+        everyone receives 100 tokens per person. In another scheme, each participant pays 40% of taxes over their
+        earnings and each participant receives 200 tokens.
+
+
+    </p>
+    <p>
+       If the participant with 400 tokens lost the competition, they will lose 40 tokens of their earnings before taxes.
+
+    </p>
+    <p>
+        The net income of each participant is, therefore, calculated as follows:
+    </p>
+    <p>
+        earning minus loss from competition (if applicable) minus tax payment plus transfers.
+
+    </p>
+    <p>
+       Each participant will choose in private which scheme they want to apply to the group. The computer will then
+        randomly select one of these decisions and apply it to all participants in the decision group. Each decision
+        is equally likely to be drawn.
+    </p>
+    <p>
+        Two rounds per period will be randomly selected by the computer for computing payoffs. Each round is equally
+        likely to be drawn.
+    </p>
+    <p>
+        Each decision and each outcome are independent of each of your other decisions. This means that your decisions
+        and outcomes in one round will not affect your outcomes in any other round.
+    </p>
+    <p>
+        You will ﬁnd out your payoff from Part 2 at the end of the experiment.
+    </p>
+    <p>
+        Are there questions about this screen or anything we have reviewed so far?
+    </p>
+
+    <style>
+    .otree-next-button {
+        display: none;
+    }
+    </style>
+
+    <head>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#proceed').hide().delay(0*1000).fadeIn(2200);
+            });
+        </script>
+    </head>
+    <body>
+        <div class="next-btn" id="proceed" style="text-align:right;">{% next_button %}</div>
+    </body>
+
+
+{% endblock %}

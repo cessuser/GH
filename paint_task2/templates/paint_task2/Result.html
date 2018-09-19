@@ -1,0 +1,23 @@
+{% extends "global/Base.html" %}
+{% load otree static %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block content %}
+    <p>
+        Based on your choices, you liked the paintings by{ {{ group1 }} }the most in the first task and you liked
+        the paintings by{ {{ group2 }} }the most in the second task.
+    </p>
+
+    <p>
+        You are assigned to the{ {{ group }} }group
+
+        These groups will remain the same for the rest of the experiment.
+    </p>
+
+    <div align="right">{% next_button %}</div>
+{% endblock %}
+
+

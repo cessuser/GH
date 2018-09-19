@@ -1,0 +1,76 @@
+{% extends "global/Base.html" %}
+{% load otree static %}
+
+{% block title %}
+    Survey
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.q20 %}
+<p><img src= "{% static "survey/table.jpg" %}" height="400"></p>
+    {% formfield player.q21 %}
+
+    {{ form.q22.label }}
+    <div id="1"> {{ form.q22.0}} </div>
+    <div id="2"> {{ form.q22.1}} </div>
+    <div id="3"> {{ form.q22.2}} </div>
+    <div id="4"> {{ form.q22.3}} </div>
+    <style>
+        .painter_field {
+            display:none;
+        }
+    </style>
+    <div class="painter_field" id="klee">{% formfield player.klee %}</div>
+    <div class="painter_field" id="kandinsky">{% formfield player.kandinsky %}</div>
+    <div class="painter_field" id="boch">{% formfield player.boch %}</div>
+    <div class="painter_field" id="bazille">{% formfield player.bazille %}</div>
+<button class="otree-btn-next btn btn-primary next-button otree-next-button" id="next" disabled>Next</button>
+<script>
+   $(document).ready(function(){
+    // On Select option changed
+    $("#1").change(function(){
+        $('#next').attr('disabled','disabled');
+        $("#klee").show();
+        $("#kandinsky").hide();
+        $("boch").hide();
+        $("#bazille").hide();
+    });
+    $("#2").change(function(){
+        $('#next').attr('disabled','disabled');
+        $("#klee").hide();
+        $("#kandinsky").show();
+        $("boch").hide();
+        $("#bazille").hide();
+    });
+    $("#3").change(function(){
+        $('#next').attr('disabled','disabled');
+        $("#klee").hide();
+        $("#kandinsky").hide();
+        $("#boch").show();
+        $("#bazille").hide();
+    });
+    $("#4").change(function(){
+        $('#next').attr('disabled','disabled');
+        $("#klee").hide();
+        $("#kandinsky").hide();
+        $("boch").hide();
+        $("#bazille").show();
+    });
+    $("#klee").change(function(){
+            $('#next').removeAttr('disabled');
+    });
+     $("#kandinsky").change(function(){
+            $('#next').removeAttr('disabled');
+    });
+     $("#boch").change(function(){
+            $('#next').removeAttr('disabled');
+    });
+     $("#bazille").change(function(){
+            $('#next').removeAttr('disabled');
+    });
+   });
+
+</script>
+
+{% endblock %}
