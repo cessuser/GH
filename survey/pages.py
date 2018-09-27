@@ -25,7 +25,7 @@ class Demographics3(Page):
 
 class Demographics4(Page):
     form_model = models.Player
-    form_fields = ['q20','q21','q22','klee','kandinsky','boch','bazille']
+    form_fields = ['q20a','q20b', 'q20c','q21','q22','klee','kandinsky','boch','bazille']
 
 class EndofSurvey(Page):
     pass

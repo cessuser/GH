@@ -45,17 +45,17 @@ class Subsession(BaseSubsession):
                     paintA = pt2_p_order_boch[i] + '_b.jpg'
                     pt2_pics_src.append([paintA, paintB])
 
-            print("pta: ", pt2_a_order)
-            print("ptp bazille: ", pt2_p_order_bazille)
-            print("ptp boch: ", pt2_p_order_boch)
-
+            # print("pta: ", pt2_a_order)
+            # print("ptp bazille: ", pt2_p_order_bazille)
+            # print("ptp boch: ", pt2_p_order_boch)
+            #
             self.session.vars['pt2_orders'] = {
                 'pta_order': pt2_a_order,
                 'ptp_order_bazille': pt2_p_order_bazille,
                 'ptp_order_boch': pt2_p_order_boch,
                 'pics_src': pt2_pics_src,
             }
-            print("Subsession: pics_src ", pt2_pics_src)
+            # print("Subsession: pics_src ", pt2_pics_src)
 
 class Group(BaseGroup):
 

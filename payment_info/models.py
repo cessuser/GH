@@ -3,7 +3,7 @@ from otree.api import (
     Currency as c, currency_range
 )
 import random
-
+author = 'Danlin Chen'
 
 doc = """
 This application provides a webpage instructing participants how to get paid.

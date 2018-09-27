@@ -6,9 +6,14 @@
 {% endblock %}
 
 {% block content %}
-
-    {% formfield player.q20 %}
+<p>
+    The table below shows the income distribution of a group with four members. Suppose the group has chosen a tax rate
+    of 50% and transfers of 250 tokens per participant.
+</p>
 <p><img src= "{% static "survey/table.jpg" %}" height="400"></p>
+{% formfield player.q20a %}
+{% formfield player.q20b %}
+{% formfield player.q20c %}
     {% formfield player.q21 %}
 
     {{ form.q22.label }}

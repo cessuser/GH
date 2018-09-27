@@ -27,7 +27,7 @@ class Results_ET(Page):
         return self.round_number == 1
 
 
-class period3(Page):
+class Period3(Page):
     form_model = models.Player
     form_fields = ['dv']
 
@@ -82,7 +82,7 @@ class MyPage(Page):
 page_sequence = [
     WaitOther,
     Results_ET,
-    period3,
+    Period3,
     ResultsWaitPage,
     MyPage
 ]

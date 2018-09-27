@@ -7,5 +7,11 @@ from .models import Constants
 class PlayerBot(Bot):
 
     def play_round(self):
-        yield (pages.Period1, {'dv': 1})
-        yield (pages.Results)
+        if self.round_number == 1:
+            yield (pages.Results_ET)
+        if self.player.id_in_group % 2 == 0:
+            yield (pages.Period1, {'dv': 1})
+        if self.player.id_in_group % 2 == 1:
+            yield (pages.Period1, {'dv': 2})
+        if self.round_number == 7:
+            yield (pages.MyPage)

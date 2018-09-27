@@ -3,6 +3,7 @@ from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
 import time
+import random
 
 class Introduction(Page):
     def is_displayed(self):
@@ -48,11 +49,11 @@ class taskPage_ET(Page):
         self.participant.vars['ET1_incorrect'].append(0)
         return{
             'round_num': self.round_number,
-            'shown_num': Constants.num_len1[self.round_number - 1]
+            'shown_num': Constants.shown_nums[self.round_number-1]
         }
 
     def entry_field_error_message(self, value):
-        if value != len(str(Constants.num_len1[self.round_number-1])):
+        if value != len(str(Constants.shown_nums[self.round_number-1])):
             self.participant.vars['ET1_incorrect'][self.round_number-1] += 1
             return 'Please enter the right digit number '
 
@@ -60,7 +61,7 @@ class taskPage_ET(Page):
         spent = time.time() - self.player.participant.vars['time_onLoad']
 
         self.participant.vars['remaining_time'] = self.player.participant.vars['remaining_time'] - spent
-        if self.player.entry_field == len(str(Constants.num_len1[self.round_number-1])):
+        if self.player.entry_field == len(str(Constants.shown_nums[self.round_number-1])):
             self.participant.vars['ET1_correct'] += 1
         if self.timeout_happened:
             self.participant.vars['remaining_time'] = 0

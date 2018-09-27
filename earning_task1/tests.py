@@ -7,5 +7,10 @@ from .models import Constants
 class PlayerBot(Bot):
 
     def play_round(self):
-        yield (pages.MyPage)
-        yield (pages.Results)
+        if self.round_number == 1:
+            yield (pages.Introduction)
+            yield (pages.EarningTaskIntro)
+            yield (pages.TaxTransferIntro)
+            yield (pages.TaxTransferIntro2)
+        answer = len(str(Constants.shown_nums[self.round_number-1]))
+        yield (pages.taskPage_ET, {'entry_field': answer})

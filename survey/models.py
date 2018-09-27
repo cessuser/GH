@@ -4,7 +4,7 @@ from otree.api import (
 )
 import random
 
-
+author = 'Danlin Chen'
 class Constants(BaseConstants):
     name_in_url = 'survey'
     players_per_group = None
@@ -101,23 +101,23 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect
     )
     q15=models.StringField(
-        label='On a scale from 1 (Not at all) to 7 (Very much), how strongly did you feel belongingness to the ... group?',
-        choices = ['Klee-Bazille', 'Kandinsky-Boch', 'Klee-Boch'],
+        label='On a scale from 1 (Not at all) to 7 (Very much), how strongly did you feel belongingness to the your group?',
+        choices = ['0', '1','2','3','4','5','6','7'],
         widget = widgets.RadioSelect
     )
     q16 = models.StringField(
-        label='On a scale from 1 (Not at all) to 7 (Very much), how much commonality did you think you shared with the members of …? ',
-        choices=['Klee-Bazille', 'Kandinsky-Boch', 'Klee-Boch'],
+        label='On a scale from 1 (Not at all) to 7 (Very much), how much commonality did you think you shared with the members in your group? ',
+        choices=['0', '1','2','3','4','5','6','7'],
         widget=widgets.RadioSelect
     )
     q17 = models.StringField(
-        label='On a scale from 1 (Not at all) to 7 (Very much), how close did you feel toward members of …?',
-        choices=['Klee-Bazille', 'Kandinsky-Boch', 'Klee-Boch'],
+        label='On a scale from 1 (Not at all) to 7 (Very much), how close did you feel toward members in your group?',
+        choices=['0', '1', '2', '3', '4', '5', '6', '7'],
         widget=widgets.RadioSelect
     )
     q18 = models.StringField(
-        label='On a scale from 1 (Not at all) to 7 (Very much), how favorably did you feel toward the members of …? ',
-        choices=['Klee-Bazille', 'Kandinsky-Boch', 'Klee-Boch'],
+        label='On a scale from 1 (Not at all) to 7 (Very much), how favorably did you feel toward the members in your group? ',
+        choices=['0', '1', '2', '3', '4', '5', '6', '7'],
         widget=widgets.RadioSelect
     )
     other = models.StringField(label='If you select other option. Please specify', widget=widgets.TextInput,blank=True)
@@ -127,12 +127,17 @@ class Player(BasePlayer):
                  'Try to maximize the number of tokens for the poorest group member.', 'Other.Please specify'],
         widget=widgets.RadioSelect
     )
-    q20=models.StringField(
-        label='The table below shows the income distribution of a group with four members. Suppose the group has chosen a tax rate of 50% and transfers of 250 tokens per participant.',
-        choices=['Which participant pays the highest amount of taxes in absolute terms?',
-                 'Which participant benefits the most in absolute terms from this scheme?',
-                 'What is the total sum of taxes paid by participants?'],
-        widget=widgets.RadioSelect
+    q20a=models.StringField(
+        label='Which participant pays the highest amount of taxes in absolute terms?',
+        widget=widgets.TextInput
+    )
+    q20b=models.StringField(
+        label='Which participant benefits the most in absolute terms from this scheme?',
+        widget=widgets.TextInput
+    )
+    q20c = models.StringField(
+        label='What is the total sum of taxes paid by participants?',
+    widget = widgets.TextInput
     )
     q21=models.StringField(
         label='What do you think the experiment was about?',
